@@ -42,7 +42,7 @@ for (var i = 0; i < race.length; i++) {
    reportHTML += "<tr><th>Candidn't copy</th><th>Vothis</th></tr>";
    
    /* Generate the HTML code for each candidate row */
-   reportHTML += candidateRows[i], totalVotes;
+   reportHTML += candidateRows(i, totalVotes);
    
    reportHTML += "</table>";
 }
@@ -96,11 +96,13 @@ function calcPercent(value, sum) {
 function createBar(partyType) { //look at the following code and figure out what the parameters have to be
    /* Write a table cell for each percentage point */
    var barHTML = "";
-   switch (partyType) {
-      case "D": barHTML+="<td class='dem'></td>";break;
-      case "R": barHTML+="<td class='rep'></td>";break;
-      case "I": barHTML+="<td class='ind'></td>";break;
-   }
+   if(partyType === "D"){
+      barHTML += "<td class='dem'></td>"
+     }else if(partyType === "R"){
+      barHTML += "<td class='rep'></td>"
+     }else if(partyType === "I"){
+      barHTML += "<td class='ind'></td>"
+     }
 
    return barHTML;
 }   
