@@ -56,13 +56,13 @@ function candidateRows(raceNum, totalVotes) {
    var rowHTML = "";
    
    /* Loop through three candidates */
-   for (var j = 0; j <= 2; j++) {
+   for (var j = 0; j < 2; j++) {
       
       /* Votes and Affiliation of the current candidate in the loop */
       
       var candidateName = candidate[raceNum][j];
       var candidateParty = party[raceNum][j];      
-       candidateVotes = votes[raceNum][j];
+      var candidateVotes = votes[raceNum][j];
       
       /* Calculate the percent of the vote by each candidate */
       var candidatePercent = calcPercent(candidateVotes, totalVotes);
@@ -93,13 +93,13 @@ function calcPercent(value, sum) {
 }
 
 /* Function to create a bar chart for different candidate vote percentages */
-function createBar( ) { //look at the following code and figure out what the parameters have to be
+function createBar(partyType) { //look at the following code and figure out what the parameters have to be
    /* Write a table cell for each percentage point */
    var barHTML = "";
    switch (partyType) {
-      case "D": barHTML="<td class='dem'></td>";break;
-      case "R": barHTML="<td class='rep'></td>";break;
-      case "I": barHTML="<td class='ind'></td>";break;
+      case "D": barHTML+="<td class='dem'></td>";break;
+      case "R": barHTML+="<td class='rep'></td>";break;
+      case "I": barHTML+="<td class='ind'></td>";break;
    }
 
    return barHTML;
