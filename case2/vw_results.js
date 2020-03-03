@@ -34,7 +34,7 @@ for (var i = 0; i < race.length; i++) {
    
    /* Calculate the total number of votes in each race */
    var totalVotes = 0;
-   votes(i.forEach(calcSum));
+   votes[i].forEach(calcSum);
 
    /* Generate the HTML code showing the race name and title row */ 
    reportHTML += "<table>";
@@ -44,7 +44,7 @@ for (var i = 0; i < race.length; i++) {
    /* Generate the HTML code for each candidate row */
    reportHTML += candidateRows[i], totalVotes;
    
-   reportHTMl += "</table>";
+   reportHTML += "</table>";
 }
 
 /* Display the report in the first and only section element */
