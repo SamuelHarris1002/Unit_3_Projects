@@ -56,7 +56,7 @@ function candidateRows(raceNum, totalVotes) {
    var rowHTML = "";
    
    /* Loop through three candidates */
-   for (var j = 0; j < 2; j++) {
+   for (var j = 0; j < 3; j++) {
       
       /* Votes and Affiliation of the current candidate in the loop */
       
